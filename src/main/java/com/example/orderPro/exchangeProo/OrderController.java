@@ -23,7 +23,7 @@ class OrderController {
     @PostMapping(value="/save")
     public String saveUser(@RequestBody Order order) {
         orderRepo.save(order);
-        return "Saved...";
+        return "Order Details Saved to Database...";
     }
 
 }

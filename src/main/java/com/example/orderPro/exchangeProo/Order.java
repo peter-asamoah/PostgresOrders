@@ -1,69 +1,91 @@
 package com.example.orderPro.exchangeProo;
+
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
 import javax.persistence.*;
 
 @Entity
-@Table(name = "orderss")
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
+@Table(name = "orders")
 public class Order {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
 
+    @Id
+    @Column(name =  "order_id")
+    private String orderId;
     @Column
-    private String stock;
+    private String product;
     @Column
     private int quantity;
     @Column
     private double price;
     @Column
-    private String action;
+    private String side;
 
-    public Order(String stock, int quantity, double price, String action) {
-        this.stock = stock;
-        this.quantity = quantity;
-        this.price = price;
-        this.action = action;
-    }
 
-    public String getStock() {
-        return stock;
-    }
 
-    public void setStock(String stock) {
-        this.stock = stock;
-    }
+//    public Order() {
+//    }
 
-    public int getQuantity() {
-        return quantity;
-    }
+//    public Order(String product, int quantity, double price, String side) {
+//        this.product = product;
+//        this.quantity = quantity;
+//        this.price = price;
+//        this.side = side;
+//    }
 
-    public void setQuantity(int quantity) {
-        this.quantity = quantity;
-    }
-
-    public double getPrice() {
-        return price;
-    }
-
-    public void setPrice(double price) {
-        this.price = price;
-    }
-
-    public String getAction() {
-        return action;
-    }
-
-    public void setAction(String action) {
-        this.action = action;
-    }
+//    public String getOrderId() {
+//        return orderId;
+//    }
+//
+//    public void setOrderId(String orderId) {
+//        this.orderId = orderId;
+//    }
+//
+//    public String getProduct() {
+//        return product;
+//    }
+//
+//    public void setProduct(String product) {
+//        this.product = product;
+//    }
+//
+//    public int getQuantity() {
+//        return quantity;
+//    }
+//
+//    public void setQuantity(int quantity) {
+//        this.quantity = quantity;
+//    }
+//
+//    public double getPrice() {
+//        return price;
+//    }
+//
+//    public void setPrice(double price) {
+//        this.price = price;
+//    }
+//
+//    public String getSide() {
+//        return side;
+//    }
+//
+//    public void setSide(String side) {
+//        this.side = side;
+//    }
 
     @Override
     public String toString() {
         return "Order{" +
-                "ID='" + id + '\'' +
-                "Stock='" + stock + '\'' +
+                "Stock='" + product + '\'' +
                 ", quantity=" + quantity +
                 ", price=" + price +
-                ", action='" + action + '\'' +
+                ", action='" + side + '\'' +
                 '}';
     }
 }
