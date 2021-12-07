@@ -24,10 +24,10 @@ public class OrderProApplication {
 
 
 		Order order = new Order();
-				order.setProduct("AAPL");
+				order.setProduct("AMZN");
 				order.setPrice(1.5);
 				order.setQuantity(3);
-				order.setSide("BUY");
+				order.setSide("SELL");
 				order.setOrderId(null);
 
 		String id = webClient
